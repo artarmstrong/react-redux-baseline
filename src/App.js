@@ -6,16 +6,20 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import logo from './defi-logo-color.png';
+import headerLogo from './img/defi-logo-color.png';
+import poweredLogo from './img/powered-by-logo.png';
 
 const styles = {
   paper: {
-    marginTop: '30px',
+    marginTop: '50px',
     padding: '60px 30px ',
   },
   button: {
-    marginTop: '30px',
-  }
+    margin: '30px 0',
+  },
+  bottom: {
+    marginTop: '20px',
+  },
 };
 
 class App extends Component {
@@ -24,11 +28,11 @@ class App extends Component {
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <Grid fluid>
           <Row center="xs" middle="xs">
-            <Col xs={12} sm={8} md={5} lg={5}>
+            <Col xs={12} sm={8} md={6} lg={6}>
               <Paper zDepth={3} style={styles.paper}>
                 <Row center="xs">
                   <Col xs={12}>
-                    <img src={logo} alt="logo" />
+                    <img src={headerLogo} alt="logo" />
                   </Col>
                   <Col xs={12}>
                     <TextField
@@ -50,8 +54,31 @@ class App extends Component {
                       label="Login"
                     />
                   </Col>
+                  <Col xs={8}>
+                    <p>For help please don't call 214-732-9199</p>
+                  </Col>
+                  <Col xs={8}>
+                    <p>
+                      <small>
+                        <strong>defi</strong>&nbsp;
+                        deployed&nbsp;
+                        <strong>SOW-867-Adding-CUDL-Forwarding-Support</strong>&nbsp;
+                        on 10/3/2016 1:30:27 PM
+                      </small>
+                    </p>
+                  </Col>
+                  <Col xs={8}>
+                    <a
+                    href="https://kraken.defisolutions.com/app#/projects/definitive/releases/create"
+                    class="btn btn-danger btn-sm">
+                      Deploy
+                    </a>
+                  </Col>
                 </Row>
               </Paper>
+              <a href="http://defisolutions.com" target="_blank">
+                <img src={poweredLogo} style={styles.bottom} alt="logo" />
+              </a>
             </Col>
           </Row>
         </Grid>
